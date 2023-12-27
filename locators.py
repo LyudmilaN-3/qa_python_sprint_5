@@ -13,22 +13,30 @@ class Locator:
     BUTTON_INTO_ACC = (
         By.XPATH, "//main/section[@class='BurgerConstructor_basket__29Cd7 mt-25 ']/div/button"
     )  # Кнопка "Войти в аккаунт"
-    BUTTON_GET_ORDER = (By.XPATH, "//main/section[2]/div/button")  # Кнопка "Оформить заказ"
+    BUTTON_GET_ORDER = (
+        By.CSS_SELECTOR, "main section button[class='button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_large__G21Vg']"
+    )  # Кнопка "Оформить заказ"
     TITLE_GATHER_BURGER = (
-        By.XPATH, "//main/section[1]/h1[@class='text text_type_main-large mb-5 mt-10']"
+        By.XPATH, "//main/section[@class='BurgerIngredients_ingredients__1N8v2']/h1[@class='text text_type_main-large mb-5 mt-10']"
     )  # Заголовок "Соберите бургер"
 
     # Элементы контруктора
-    LABEL_BUNS = (By.XPATH, "//main/section[1]/div[1]/div[1]")  # Надпись "Булки" над скроллом
-    LABEL_SAUCES = (By.XPATH, "//main[1]/section[1]/div[1]/div[2]")  # Надпись "Соусы" над скроллом
-    LABEL_FILLINGS = (By.XPATH, "//main[1]/section[1]/div[1]/div[3]")  # Надпись "Начинки" над скроллом
-    TITLE_BUNS = (By.XPATH, "//main/section[1]/div[2]/h2[1]")  # Заголовок "Булки"
-    TITLE_SAUCES = (By.XPATH, "//main/section[1]/div[2]/h2[2]")  # Заголовок "Соусы"
-    TITLE_FILLINGS = (By.XPATH, "//main/section[1]/div[2]/h2[3]")  # Заголовок "Начинки"
+    LABEL_BUNS = (
+        By.XPATH, "//span[contains(text(), 'Булки')]//ancestor::div[@class='tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect']"
+    )  # Надпись "Булки" над скроллом
+    LABEL_SAUCES = (
+        By.XPATH, "//span[contains(text(), 'Соусы')]//ancestor::div[@class='tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect']"
+    )  # Надпись "Соусы" над скроллом
+    LABEL_FILLINGS = (
+        By.XPATH, "//span[contains(text(), 'Начинки')]//ancestor::div[@class='tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect']"
+    )  # Надпись "Начинки" над скроллом
+    TITLE_BUNS = (By.XPATH, "//h2[contains(text(),'Булки')]")  # Заголовок "Булки"
+    TITLE_SAUCES = (By.XPATH, "//h2[contains(text(),'Соусы')]")  # Заголовок "Соусы"
+    TITLE_FILLINGS = (By.XPATH, "//h2[contains(text(),'Начинки')]")  # Заголовок "Начинки"
 
     # Элементы на странице регистрации
-    NAME_FIELD_REG = (By.XPATH, "//fieldset[1]/div/div/input")  # Поле ввода "Имя"
-    EMAIL_FIELD_REG = (By.XPATH, "//fieldset[2]/div/div/input")  # Поле ввода "Email"
+    NAME_FIELD_REG = (By.XPATH, "//div/label[contains(text(),'Имя')]/../input")  # Поле ввода "Имя"
+    EMAIL_FIELD_REG = (By.XPATH, "//div/label[contains(text(),'Email')]/../input")  # Поле ввода "Email"
     PASSWORD_FIELD_REG = (By.CSS_SELECTOR, "fieldset input[type='password']")  # Поле ввода "Пароль"
     BUTTON_GET_REG = (By.XPATH, "//main/div/form/button")  # Кнопка "Зарегистрироваться"
     LABEL_UNCORRECT_PASSWORD = (

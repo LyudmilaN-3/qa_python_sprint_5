@@ -11,6 +11,7 @@ from locators import Locator
 def driver():
     driver = webdriver.Chrome()
     driver.get(Constant.MAIN_URL)
+    driver.maximize_window()
     yield driver
     driver.quit()
 

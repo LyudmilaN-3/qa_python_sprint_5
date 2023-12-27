@@ -6,7 +6,6 @@ from locators import Locator
 
 class TestConstrMoving:
     def test_moving_to_buns_by_label_in_constr_success(self, driver):
-        driver.maximize_window()
         driver.find_element(*Locator.LABEL_SAUCES).click()
         WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located(Locator.TITLE_SAUCES)
